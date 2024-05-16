@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" style="background-color: black;height: 400px;width: 300px;box-shadow: 2px 2px 2px 2px;border-radius: 15px;margin-left: 40%;margin-top: 100px;">
+    <div id="scrn">
+     <form>
+        <input type="text" id="screen" style="height: 70px;width: 90%;border-radius: 15px;margin-top: 15px;margin-left: 12px;background-color: rgb(204, 184, 160);">
+     </form>   
+    </div>
+    <div id="buttons" style="display: grid;grid-template-rows: repeat(5,40px);grid-template-columns: repeat(4,40px);row-gap: 20px;column-gap: 28px;margin-top: 10px;margin-left: 20px;">
+    <button id="btn1" onclick="clearDisplay('')" style="height: 55px; width: 55px; border-radius: 15%;background-color: orange;">AC</button>
+    <button id="btn2" onclick="appendToDisplay('%')" style="height: 55px; width: 55px;border-radius: 15%;background-color: orange;">%</button>
+    <button id="btn3"onclick="remove('Del')"style="height: 55px; width: 55px;border-radius: 15%;background-color: orange;">DEL</button>
+    <button id="btn4" onclick="appendToDisplay('/')"style="height: 55px; width: 55px;border-radius: 15%;background-color: orange;">/</button>
+    <button id="btn5" onclick="appendToDisplay('7')" style="height: 55px; width: 55px;border-radius: 15%;background-color: rgb(95, 94, 94);">7</button>
+    <button id="btn6" onclick="appendToDisplay('8')"style="height: 55px; width: 55px;border-radius: 15%;background-color: rgb(95, 94, 94);">8</button>
+    <button id="btn7" onclick="appendToDisplay('9')"style="height: 55px; width: 55px;border-radius: 15%;background-color: rgb(95, 94, 94);">9</button>
+    <button id="btn8" onclick="appendToDisplay('*')"style="height: 55px; width: 55px;border-radius: 15%;background-color: orange;">*</button>
+    <button id="btn9" onclick="appendToDisplay('4')"style="height: 55px; width: 55px;border-radius: 15%;background-color: rgb(95, 94, 94);">4</button>
+    <button id="btn10" onclick="appendToDisplay('5')"style="height: 55px; width: 55px;border-radius: 15%;background-color: rgb(95, 94, 94);">5</button>
+    <button id="btn11" onclick="appendToDisplay('6')"style="height: 55px; width: 55px;border-radius: 15%;background-color: rgb(95, 94, 94);">6</button>
+    <button id="btn12" onclick="appendToDisplay('-')"style="height: 55px; width: 55px;border-radius: 15%;background-color: orange;">-</button>
+    <button id="btn13" onclick="appendToDisplay('1')"style="height: 55px; width: 55px;border-radius: 15%;background-color: rgb(95, 94, 94);">1</button>
+    <button id="btn14" onclick="appendToDisplay('2')"style="height: 55px; width: 55px;border-radius: 15%;background-color: rgb(95, 94, 94);">2</button>
+    <button id="btn15" onclick="appendToDisplay('3')"style="height: 55px; width: 55px;border-radius: 15%;background-color: rgb(95, 94, 94);">3</button>
+    <button id="btn16" onclick="appendToDisplay('+')"style="height: 55px; width: 55px;border-radius: 15%;background-color: orange;">+</button>
+    <button id="btn17" onclick="appendToDisplay('00')"style="height: 55px; width: 55px;border-radius: 15%;background-color: rgb(95, 94, 94);">00</button>
+    <button id="btn18" onclick="appendToDisplay('0')"style="height: 55px; width: 55px;border-radius: 15%;background-color: rgb(95, 94, 94);">0</button>
+    <button id="btn19" onclick="appendToDisplay('.')"style="height: 55px; width: 55px;border-radius: 15%;background-color: rgb(95, 94, 94);">.</button>
+    <button id="btn20" onclick="calculate('=')"style="height: 55px; width: 55px;border-radius: 15%;background-color: orange;">=</button>
+    </div>
+    </div>
+    <script>
+        let maindiv=document.getElementById("box")
+
+        let Div1=document.getElementById("scrn")
+
+        let div1=document.getElementById("screen")
+        function appendToDisplay(input){
+            div1.value+=input;
+        }
+        function clearDisplay(){
+            div1.value=""
+        }
+        function calculate(){
+            div1.value=eval(div1.value)
+        }
+        function remove(input){
+            currentValue=div1.value;
+            currentValue=currentValue.slice(0,-1)
+            div1.value=currentValue
+        }
+    </script>
+</body>
+</html>
